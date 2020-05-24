@@ -28,14 +28,19 @@ for ipad in e.findAll('li'):
         matched_ipads.append(ipad_type)
 
 message = "\n".join(matched_ipads)
-print(message)
 
 if message:
+    print(message)
+
     email_message = Mail(
         from_email=from_email,
         to_emails=destinations,
-        subject="iPad",
-        html_content="\n".join(matched_ipads)
+        subject='iPad',
+        html_content=message
     )
 
     response = sg.send(email_message)
+    
+    print(response.status_code)
+    print(response.body)
+    print(response.headers)
