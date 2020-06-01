@@ -11,7 +11,7 @@ from_email = os.environ.get("FROM_EMAIL")
 
 URL = "https://www.apple.com/shop/refurbished/ipad"
 page = requests.get(URL)
-match_string = 'Refurbished iPad Wi-Fi 128GB.*Space Gray.*6th generation'
+match_string = 'Refurbished iPad Wi-Fi 128GB.*Space Gray.*\(6th Generation\)'
 
 soup = BeautifulSoup(page.content, 'html.parser')
 
